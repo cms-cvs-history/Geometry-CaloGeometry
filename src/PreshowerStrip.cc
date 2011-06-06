@@ -27,7 +27,8 @@ PreshowerStrip::getCorners() const
 	    for( unsigned int iz ( 0 ) ; iz !=2 ; ++iz )
 	    {
 	       const double sz ( 0 == iz ? -1.0 : +1.0 ) ;
-	       const unsigned int  i ( 4*ix + 2*iy + iz ) ;
+	       const unsigned int  i ( 4*iz + 2*ix + 
+				       ( 1 == ix ? 1-iy : iy )) ;
 
 	       corners[ i ] = GlobalPoint( 
 		  dy()>dx() ? 
